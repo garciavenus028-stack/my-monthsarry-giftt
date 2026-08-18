@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Monthsary, Babe! 💖</title>
+    <style>
+        /* COLOR THEME: SOFT PINK AND CLEAN WHITE */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff5f8, #ffe3ec);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #5a4b51;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 450px;
+            background: #ffffff;
+            padding: 30px 25px;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(255, 182, 193, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+        h1 { color: #ff7597; font-size: 24px; margin-bottom: 5px; font-weight: 700; }
+        h2 { color: #ff7597; font-size: 22px; margin-bottom: 8px; }
+        p { font-size: 14px; margin-bottom: 25px; color: #8e7a82; }
+        
+        /* SOFT PINK & WHITE MENU BUTTONS */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .menu-btn {
+            background: #ffffff;
+            border: 2px solid #ffe3ec;
+            color: #5a4b51;
+            padding: 22px 10px;
+            border-radius: 18px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.25s ease-in-out;
+            box-shadow: 0 4px 10px rgba(255, 182, 193, 0.1);
+        }
+        .menu-btn:hover {
+            transform: translateY(-4px);
+            border-color: #ff8fa9;
+            background: #fff9fb;
+            box-shadow: 0 6px 15px rgba(255, 117, 151, 0.15);
+        }
+        .emoji { font-size: 26px; display: block; margin-bottom: 8px; }
+        
+        /* CONTENT SCREENS HOUSING CONTAINER */
+        .screen { display: none; padding: 10px 0; }
+        .screen.active { display: block; }
+        
+        .back-btn {
+            background: #ff7597;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s ease;
+            box-shadow: 0 4px 12px rgba(255, 117, 151, 0.3);
+        }
+        .back-btn:hover {
+            background: #ff5c83;
+        }
+        
+        /* HEARTFELT LETTER CARD CONTAINER */
+        .letter-box {
+            text-align: left;
+            background: #fff9fb;
+            padding: 20px;
+            border-radius: 16px;
+            max-height: 220px;
+            overflow-y: auto;
+            font-size: 14px;
+            line-height: 1.65;
+            border: 1px solid #ffe3ec;
+            border-left: 5px solid #ff7597;
+            color: #5a4b51;
+        }
+        
+        /* PHOTO MEMORIES GRID AND WHITE POLAROID CARDS */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 15px;
+        }
+        .gallery-card {
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 14px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #ffe3ec;
+        }
+        .gallery-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+        .gallery-caption {
+            font-size: 12px;
+            color: #8e7a82;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+        
+        /* INVISIBLE SOUNDTRACK ELEMENT HOUSING RENDERER */
+        .music-frame {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- MAIN MENU SCREEN -->
+        <div id="main-menu" class="screen active">
+            <h1>Happy Monthsary, Babe! 💕</h1>
+            <p>Choose an option below, my babyy 👇</p>
+            
+            <div class="menu-grid">
+                <div class="menu-btn" onclick="showScreen('flowers-screen')">
+                    <span class="emoji">🌸</span> Flowers for you
+                </div>
+                <div class="menu-btn" onclick="showScreen('letter-screen')">
+                    <span class="emoji">💌</span> My love letter
+                </div>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-btn" onclick="showScreen('gallery-screen')">
+                    <span class="emoji">📸</span> Our Memories
+                </div>
+                <div class="menu-btn" onclick="showScreen('music-screen')">
+                    <span class="emoji">🎵</span> Play Soundtrack
+                </div>
+            </div>
+        </div>
+
+        <!-- FLOWERS SCREEN -->
+        <div id="flowers-screen" class="screen">
+            <h2>Flowers for You 💐</h2>
+            <p>I can't give you real flowers right now, so here's a virtual bouquet crafted with love!</p>
+            <span style="font-size: 80px; display: block; margin: 15px 0;">🌷🌹🌻🌼🌷</span>
+            <button class="back-btn" onclick="showScreen('main-menu')">Go Back</button>
+        </div>
+
+        <!-- LOVE LETTER SCREEN -->
+        <div id="letter-screen" class="screen">
+            <h2>My Love Letter 📝</h2>
+            <div class="letter-box">
+                Hi Babe,<br><br>
+               
+ Happy monthsary! Thank you so much for the love, the patience, and all the happiness you bring into my life every single day. Im so sorry if sometimes matigas ulo ko (weee sometimes lng ba talaga?) sorry if minsan nasusungitan kita thankyou talaga sa lahat lahat, binibigay mo mga gusto ko iniispoiled moko tapos magagalit ka pag nagdadrama ako pag hnd mo binigay gusto ko sino kaya nag sanay😒😒 no budget muna hihi but pinaghirapan ko to nohh nag effort ako sana ma appreciate mo BASAHIN MO NAMAN HA😒 <br><br> 
+
+anyways sorry if ganto lng ang afford ng person rn🥺 i really wanted to give you something that cost much but i dont have money pa e ang pangit naman tignan kung yung binibigay mo sakin na pera tas iipunin ko tas yun ipapambil ko righhhttt?. Basta always takecare of yourself im so sorry if madami akong nagagawang mali im aware of that pinagsisihan ko yun. Alam mo ba napapansin ko lng nagiging toxic na tayo Lalo na pag nag aaway🥺 PLS HANGGAT KAYA AYOKO NA NG GANON PIPIGILAN KO NADIN SARILI KO🥺. If ever mapagod ka sakin pls sabihin mo agad if napipilitan ka nalang, or sawa kana yung para bang ayaw mo na gusto mo na itigil pls let me know. Im so sorry din sa mga pagpipigil ko sayo sumama sa mga friends mo before sa mga kwento mo kasi saken natatakot ako baka ma influence ka nila, maybe before wala pa akong tiwala sayo na kaya mo hnd mag pa influence hnd yun dahil sa sinabi mo na syempre nagagawa ko nadin ngayon kaya pinapayagan na kita no, when i experience it kase yung gagala kasama friends masarap pala sa pakiramdam, im not saying na mas masarap sila kasama ha im saying is you know Kahit paminsan minsan masaya din palang mag enjoy kasama ibang tao like mag explore so Ayun hnd na din ako sasama sa inuman niyo hehe uhmm sana lng talaga babe kaya mong bumoses para saken pag inaaway ako ng pamilya mo ipagtanggol moko tama o mali tapos pag tayong dalawa nalng dun moko pagsabihan kung ano ba yung mali ko sa away nayun kase babe kung hnd mo kaya, bakit kapa nag girlfriend dba dyan mo naman ako patuloy nasasaktan mapapagod ako promise hnd ako magpapakasal sa lalakeng ganyan kase kung sa pamilya nga d ako maipagtanggol pano pa kaya pag sa ibang tao:) pls lng. So ayun sinabay ko lng d ko kase masabi sa personal makikita ko na naman simangot mo maiinis lng ako basta lagi mag iingat Lalo na sa pag ddrive haa pag naulan dahan dahan lng madulas kalye AND PLS BECAREFUL WITH YOUR WORDS KUNG GUSTO MOKO PAGSABIHAN PLS LNG WAG YUNG PANGET PAKINGGAN OKAY LNG SANA KUNG TAYO LNG TAO DITO ANDYAN KAPATID MO CINICHISMIS NYA YAN DUN SA TAAS NATUTUWA SILA PAG MAGKAAWAY TAYO. <br><br>
+
+you kno better kung ano pa mga gusto kong sabihin hehe masyado na kase mahaba basta always lumapit kay god pag may mabigat ka na pinagdadaanan tas ayaw mo sabihin sa aamin nila tita at tito❤️❤️❤️ Beer with me more, have more patience me ILOVEYOUU ALWAYSSSSS 🥺 <br><br>
+
+                I love you so much, always and forever! 
+            </div>
+            <button class="back-btn" onclick="showScreen('main-menu')">Go Back</button>
+        </div>
+
+        <!-- PHOTO GALLERY MEMORIES SCREEN -->
+        <div id="gallery-screen" class="screen">
+            <h2>Our Cute Memories 📸</h2>
+            <p>Every moment with you is my favorite memory.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="Screenshot_2026_0819_031145.jpg" alt="Insert Photo 1 Here">
+                    <div class="gallery-caption">You are so cute heree</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="Screenshot_2026_0819_031205.jpg" alt="Insert Photo 2 Here">
+                    <div class="gallery-caption">Damnn, that's my future husband??</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="Screenshot_2026_0819_031341.jpg" alt="Insert Photo 3 Here">
+                    <div class="gallery-caption">I just missed this haircut of yours</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="Screenshot_2026_0819_031402.jpg" alt="Insert Photo 4 Here">
+                    <div class="gallery-caption">Remmber our first staycation? hehe </div>
+                </div>
+            </div>
+            
+            <button class="back-btn" onclick="showScreen('main-menu')">Go Back</button>
+        </div>
+
+        <!-- SOUNDTRACK SCREEN -->
+        <div id="music-screen" class="screen">
+            <h2>Our Soundtrack 🎶</h2>
+            <p>Music is playing in the background...</p>
+            <span style="font-size: 60px; display: block; margin: 15px 0;">🎧✨</span>
+            <p style="font-style: italic; font-size: 13px;">"The page is streaming our special background song!"</p>
+            
+            <!-- Replace dQw4w9WgXcQ with your custom YouTube video track ID code -->
+            <iframe class="music-frame" id="yt-player" src="https://youtube.com"allow="autoplay"></iframe>
+            
+            <button class="back-btn" onclick="showScreen('main-menu')">Back to Menu</button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT NAVIGATION LOGIC -->
+    <script>
+        function showScreen(screenId) {
+            let screens = document.querySelectorAll('.screen');
+            screens.forEach(s => s.classList.remove('active'));
+            
+            document.getElementById(screenId).classList.add('active');
+
+            let player = document.getElementById('yt-player');
+            if(screenId === 'music-screen') {
+                player.src += "&autoplay=1";
+            }
+        }
+    </script>
+</body>
+</html>
